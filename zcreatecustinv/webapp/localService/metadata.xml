@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="Z_CREATE_CUSTOMER_INVOICE_SRV" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <Annotation Term="Core.SchemaVersion" String="1.0.0" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <EntityType Name="ZFB60_STR" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Serialno"/>
+                </Key>
+                <Property Name="Serialno" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="SERIALNO" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Compcode" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="COMPCODE" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Vendorno" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="VENDORNO" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Pstngdate" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Posting Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Docdate" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Posting Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fiscperiod" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="FISCPERIOD" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Headertxt" Type="Edm.String" Nullable="false" MaxLength="35" sap:unicode="false" sap:label="Reference" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Reference" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="REFERENCE" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Caltax" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="CALTAX" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Currency" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="Currency Key" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="currency-code"/>
+                <Property Name="Businessplace" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Business place" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Secco" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="SECCO" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Glaccount" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="GLACCOUNT" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Amtbase" Type="Edm.Decimal" Nullable="false" Precision="23" Scale="4" sap:unicode="false" sap:label="Amount" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Taxcode" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="TAXCODE" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Itemtext" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="ITEMTEXT" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Costcenter" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="COSTCENTER" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Hsnsac" Type="Edm.String" Nullable="false" MaxLength="16" sap:unicode="false" sap:label="HSNSAC" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Withtaxc" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="WITHTAXC" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Doctype" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="DOCTYPE" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ZFB60_HEADERSTR" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Serialno"/>
+                </Key>
+                <Property Name="Serialno" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="SERIALNO" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Compcode" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="COMPCODE" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="NavtoReturn" Relationship="Z_CREATE_CUSTOMER_INVOICE_SRV.ZFB60_HEADERSTRToReturn" FromRole="FromRole_ZFB60_HEADERSTRToReturn" ToRole="ToRole_ZFB60_HEADERSTRToReturn"/>
+                <NavigationProperty Name="NavtoZFB60STR" Relationship="Z_CREATE_CUSTOMER_INVOICE_SRV.ZFB60_HEADERSTRToZFB60_STR" FromRole="FromRole_ZFB60_HEADERSTRToZFB60_STR" ToRole="ToRole_ZFB60_HEADERSTRToZFB60_STR"/>
+            </EntityType>
+            <EntityType Name="Return" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Srno"/>
+                </Key>
+                <Property Name="Srno" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="SRNO" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Message" Type="Edm.String" Nullable="false" MaxLength="240" sap:unicode="false" sap:label="MESSAGE" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Docno" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="DOCNO" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fiscal" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="FISCAL" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <Association Name="ZFB60_HEADERSTRToZFB60_STR" sap:content-version="1">
+                <End Type="Z_CREATE_CUSTOMER_INVOICE_SRV.ZFB60_HEADERSTR" Multiplicity="1" Role="FromRole_ZFB60_HEADERSTRToZFB60_STR"/>
+                <End Type="Z_CREATE_CUSTOMER_INVOICE_SRV.ZFB60_STR" Multiplicity="*" Role="ToRole_ZFB60_HEADERSTRToZFB60_STR"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_ZFB60_HEADERSTRToZFB60_STR">
+                        <PropertyRef Name="Serialno"/>
+                    </Principal>
+                    <Dependent Role="ToRole_ZFB60_HEADERSTRToZFB60_STR">
+                        <PropertyRef Name="Serialno"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="ZFB60_HEADERSTRToReturn" sap:content-version="1">
+                <End Type="Z_CREATE_CUSTOMER_INVOICE_SRV.ZFB60_HEADERSTR" Multiplicity="1" Role="FromRole_ZFB60_HEADERSTRToReturn"/>
+                <End Type="Z_CREATE_CUSTOMER_INVOICE_SRV.Return" Multiplicity="*" Role="ToRole_ZFB60_HEADERSTRToReturn"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_ZFB60_HEADERSTRToReturn">
+                        <PropertyRef Name="Serialno"/>
+                    </Principal>
+                    <Dependent Role="ToRole_ZFB60_HEADERSTRToReturn">
+                        <PropertyRef Name="Srno"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityContainer Name="Z_CREATE_CUSTOMER_INVOICE_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="ZFB60_STRSet" EntityType="Z_CREATE_CUSTOMER_INVOICE_SRV.ZFB60_STR" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="ZFB60_HEADERSTRSet" EntityType="Z_CREATE_CUSTOMER_INVOICE_SRV.ZFB60_HEADERSTR" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="ReturnSet" EntityType="Z_CREATE_CUSTOMER_INVOICE_SRV.Return" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <AssociationSet Name="ZFB60_HEADERSTRToZFB60_STRSet" Association="Z_CREATE_CUSTOMER_INVOICE_SRV.ZFB60_HEADERSTRToZFB60_STR" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ZFB60_HEADERSTRSet" Role="FromRole_ZFB60_HEADERSTRToZFB60_STR"/>
+                    <End EntitySet="ZFB60_STRSet" Role="ToRole_ZFB60_HEADERSTRToZFB60_STR"/>
+                </AssociationSet>
+                <AssociationSet Name="ZFB60_HEADERSTRToReturnSet" Association="Z_CREATE_CUSTOMER_INVOICE_SRV.ZFB60_HEADERSTRToReturn" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ZFB60_HEADERSTRSet" Role="FromRole_ZFB60_HEADERSTRToReturn"/>
+                    <End EntitySet="ReturnSet" Role="ToRole_ZFB60_HEADERSTRToReturn"/>
+                </AssociationSet>
+            </EntityContainer>
+            <atom:link rel="self" href="http://fcdev.fischerindia.com:44303/sap/opu/odata/sap/Z_CREATE_CUSTOMER_INVOICE_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="http://fcdev.fischerindia.com:44303/sap/opu/odata/sap/Z_CREATE_CUSTOMER_INVOICE_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

@@ -1,0 +1,44 @@
+<mvc:View controllerName="fischer.zcreatecustinv.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:u="sap.ui.unified"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form">
+    <Shell id="shell">
+    <App id="app">
+    <pages>
+    <Page id="page" title="Create Vendor Invoice">
+        <content>
+        <f:SimpleForm id="SimpleForm1" editable="true" layout="ResponsiveGridLayout" title="Upload File" 
+            backgroundDesign="Solid" class="sapUiLargeMarginBeginEnd" width="92%" columnsL="2" >
+            <f:content >
+            <Title id="T"/>
+                   
+                    <Label id="lbl_text" text="File Name" />
+                    <u:FileUploader class="sapUiLargeMarginBegin sapUiContentPadding" 
+                    id="FileUploaderid" placeholder="Choose a file" name="myFileUpload" 
+                      change="onhandleUpload" fileType="xlsx,csv" buttonText="Browser" width="50%"/>
+                    <Label id="lbl_cc" text="Company Code" />
+                    <Input id="inp_cc" width="50%" class="sapUiLargeMarginBegin"/>
+            </f:content>
+        </f:SimpleForm>
+         <f:SimpleForm id="SimpleForm2" editable="true" layout="ResponsiveGridLayout"  
+            backgroundDesign="Solid" adjustLabelSpan="false" singleContainerFullSize="true" 
+            width="92%" class="sapUiLargeMarginBeginEnd"  >
+            <f:content >
+            <ToolbarSpacer id="TB" class="sapUiLargeMarginBegin"  />
+            	
+				<Toolbar id="TB1">
+					<ToolbarSpacer id="tb1" />
+					<Button id="bUpload" text="Upload"  press="fnUpload" class="sapUiSmallMarginEnd" type="Ghost" />
+                    <Button id="bClear" text="Clear"  press="fnClear" class="sapUiSmallMarginEnd" type="Ghost"/>
+				</Toolbar>
+                </f:content>
+             </f:SimpleForm>
+        </content>
+    </Page>
+     </pages>
+    </App>
+    </Shell >
+</mvc:View>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      

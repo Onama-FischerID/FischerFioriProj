@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="Z_GST_SETTLEMENT_ENTRY_SRV" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <Annotation Term="Core.SchemaVersion" String="1.0.0" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <EntityType Name="Header" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Srno"/>
+                </Key>
+                <Property Name="Srno" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="SRNO" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="AccGlPost" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Radio Button" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="AccCustVenPost" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Radio Button" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="AccGlCustPost" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Radio Button" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="AccGlVendPost" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Radio Button" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="NavToZGST_JV_STR" Relationship="Z_GST_SETTLEMENT_ENTRY_SRV.HeaderToZGST_JV_STR" FromRole="FromRole_HeaderToZGST_JV_STR" ToRole="ToRole_HeaderToZGST_JV_STR"/>
+                <NavigationProperty Name="NavToReturn" Relationship="Z_GST_SETTLEMENT_ENTRY_SRV.HeaderToReturn" FromRole="FromRole_HeaderToReturn" ToRole="ToRole_HeaderToReturn"/>
+            </EntityType>
+            <EntityType Name="Return" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Srno"/>
+                </Key>
+                <Property Name="Srno" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="SRNO" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Message" Type="Edm.String" Nullable="false" MaxLength="240" sap:unicode="false" sap:label="MESSAGE" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Docno" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="DOCNO" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fiscal" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="FISCAL" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ZGST_JV_STR" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Itemno"/>
+                </Key>
+                <Property Name="Srno" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="SRNO" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Itemno" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="ITEMNO" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Company" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="COMPANY" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Docdate" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="Posting Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Postingdate" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="Posting Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Glaccount" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="GLACCOUNT" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Customer" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="CUSTOMER" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Vendor" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="VENDOR" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Itemtext" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="ITEMTEXT" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Accounttype" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="ACCOUNTTYPE" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Taxcode" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="TAXCODE" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Plant" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="PLANT" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Currency" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="Currency Key" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="currency-code"/>
+                <Property Name="Amtdoccur" Type="Edm.Decimal" Nullable="false" Precision="23" Scale="4" sap:unicode="false" sap:label="Amount" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Itemnotax" Type="Edm.String" Nullable="false" MaxLength="6" sap:unicode="false" sap:label="ITEMNOTAX" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Profitcenter" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="PROFITCENTER" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Costcenter" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="COSTCENTER" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Businessplace" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Business place" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Reftext" Type="Edm.String" Nullable="false" MaxLength="35" sap:unicode="false" sap:label="Reference" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <Association Name="HeaderToReturn" sap:content-version="1">
+                <End Type="Z_GST_SETTLEMENT_ENTRY_SRV.Header" Multiplicity="1" Role="FromRole_HeaderToReturn"/>
+                <End Type="Z_GST_SETTLEMENT_ENTRY_SRV.Return" Multiplicity="*" Role="ToRole_HeaderToReturn"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_HeaderToReturn">
+                        <PropertyRef Name="Srno"/>
+                    </Principal>
+                    <Dependent Role="ToRole_HeaderToReturn">
+                        <PropertyRef Name="Srno"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="HeaderToZGST_JV_STR" sap:content-version="1">
+                <End Type="Z_GST_SETTLEMENT_ENTRY_SRV.Header" Multiplicity="1" Role="FromRole_HeaderToZGST_JV_STR"/>
+                <End Type="Z_GST_SETTLEMENT_ENTRY_SRV.ZGST_JV_STR" Multiplicity="*" Role="ToRole_HeaderToZGST_JV_STR"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_HeaderToZGST_JV_STR">
+                        <PropertyRef Name="Srno"/>
+                    </Principal>
+                    <Dependent Role="ToRole_HeaderToZGST_JV_STR">
+                        <PropertyRef Name="Srno"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityContainer Name="Z_GST_SETTLEMENT_ENTRY_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="HeaderSet" EntityType="Z_GST_SETTLEMENT_ENTRY_SRV.Header" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="ReturnSet" EntityType="Z_GST_SETTLEMENT_ENTRY_SRV.Return" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="ZGST_JV_STRSet" EntityType="Z_GST_SETTLEMENT_ENTRY_SRV.ZGST_JV_STR" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <AssociationSet Name="HeaderToZGST_JV_STRSet" Association="Z_GST_SETTLEMENT_ENTRY_SRV.HeaderToZGST_JV_STR" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="HeaderSet" Role="FromRole_HeaderToZGST_JV_STR"/>
+                    <End EntitySet="ZGST_JV_STRSet" Role="ToRole_HeaderToZGST_JV_STR"/>
+                </AssociationSet>
+                <AssociationSet Name="HeaderToReturnSet" Association="Z_GST_SETTLEMENT_ENTRY_SRV.HeaderToReturn" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="HeaderSet" Role="FromRole_HeaderToReturn"/>
+                    <End EntitySet="ReturnSet" Role="ToRole_HeaderToReturn"/>
+                </AssociationSet>
+            </EntityContainer>
+            <atom:link rel="self" href="https://fcdev.fischerindia.com:44303/sap/opu/odata/sap/Z_GST_SETTLEMENT_ENTRY_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="https://fcdev.fischerindia.com:44303/sap/opu/odata/sap/Z_GST_SETTLEMENT_ENTRY_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

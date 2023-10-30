@@ -1,0 +1,102 @@
+<mvc:View controllerName="fischer.zgstsettlement.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:u="sap.ui.unified"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form">
+    <Shell id="shell">
+    <App id="app">
+    <pages>
+    <Page id="page" title="{i18n>title}">
+      
+        <content>
+            <f:SimpleForm id="SimpleForm1" editable="true" layout="ResponsiveGridLayout" title="Upload File" 
+            backgroundDesign="Solid" class="sapUiLargeMarginBeginEnd" width="92%" >
+            <f:content >
+            <Title id="T"/>
+                    <Label id="lbl_text" text="File Name" class="sapUiLargeMarginEnd"/>
+                    <u:FileUploader class="sapUiLargeMarginBegin sapUiContentPadding" 
+                    id="FileUploaderid" placeholder="Choose a file" name="myFileUpload" 
+                      width="80%" change="onhandleUpload" fileType="xlsx,csv" buttonText="Browser"/>
+                    
+            </f:content>
+        </f:SimpleForm>
+         <f:SimpleForm id="SimpleForm2" editable="true" layout="ResponsiveGridLayout"  
+            backgroundDesign="Solid" adjustLabelSpan="false" singleContainerFullSize="true" 
+            class="sapUiLargeMarginBeginEnd" width="92%" >
+                <!-- <core:Title id="T1"/> -->
+                    <VBox id="Vb1" alignItems="Start" alignContent="End" class="sapUiLargeMarginBegin">
+		                <RadioButton id="RB1" text="Account GL to GL"/>
+		                <RadioButton id="RB2" text="Account Customer and Vendor"/>
+		            </VBox>
+                    <VBox id="Vb2" alignItems="Inherit" alignContent="End" class="sapUiLargeMarginBeginEnd" >
+                        <RadioButton id="RB3" text="Account GL to Customer"/>
+		                <RadioButton id="RB4" text="Account GL to Vendor"/>
+	                </VBox>
+        </f:SimpleForm>
+        <f:SimpleForm id="SimpleForm3" editable="true" layout="ResponsiveGridLayout"  
+            backgroundDesign="Solid" adjustLabelSpan="false" singleContainerFullSize="true" 
+            width="92%" class="sapUiLargeMarginBeginEnd"  >
+            <f:content >
+            <ToolbarSpacer id="TB" class="sapUiLargeMarginBegin"  />
+            	
+				<Toolbar id="TB1">
+					<ToolbarSpacer id="tb1" />
+					<Button id="bUpload" text="Upload"  press="fnUpload" class="sapUiSmallMarginEnd" type="Ghost" />
+                    <Button id="bClear" text="Clear"  press="fnClear" class="sapUiSmallMarginEnd" type="Ghost"/>
+                    <Button id="bDownloadr" text="Download Template" press="fnDownloadTemplate"  type="Ghost"/>
+				</Toolbar>
+			
+            <!-- <core:Title id="CText" text="" />   -->
+                <!-- <HBox id="hb1" alignItems="End" alignContent="End" class="sapUiLargeMarginBegin" >
+                    <Button id="bUpload" text="Upload"  press="fnUpload" class="sapUiSmallMarginEnd"/>
+                    <Button id="bClear" text="Clear"  press="fnClear" class="sapUiSmallMarginEnd" />
+                    <Button id="bDownloadr" text="Download Template" press="fnDownloadTemplate"/>
+                </HBox> -->
+                </f:content>
+             </f:SimpleForm>
+        <f:SimpleForm id="SimpleForm4" editable="true" layout="ResponsiveGridLayout"  
+            backgroundDesign="Solid" adjustLabelSpan="false" singleContainerFullSize="true" 
+            class="sapUiLargeMarginBeginEnd" width="92%" >
+        <Table id="table0" items="{tdata>/data}" visible="false">
+                <items>
+                        <ColumnListItem type="Active" id="item0">
+                            <cells>
+                                <Text text="{tdata>Srno}" id="text0" wrapping="false"/>
+                                <Text text="{tdata>Message}" id="text1"/>
+                                <Text text="{tdata>Docno}" id="text2"/>
+                                <Text text="{tdata>Fiscal}" id="text3"/>         
+                            </cells>
+                        </ColumnListItem>
+                </items>
+            	<columns>
+                        <Column id="column0">
+                            <header>
+                                <Label text="SrNo" id="label0"/>
+                            </header>
+                        </Column>
+                        <Column id="column1">
+                            <header>
+                                <Label text="Message" id="label1"/>
+                            </header>
+                        </Column>
+                        <Column id="column2">
+                            <header>
+                                <Label text="Document No" id="label2"/>
+                            </header>
+                        </Column>
+                        <Column id="column3">
+                            <header>
+                                <Label text="Fiscal Year" id="label3"/>
+                            </header>
+                        </Column> 
+				</columns>	
+        </Table>
+        </f:SimpleForm>
+        </content>
+        </Page>
+        </pages>
+    </App>
+    </Shell >
+    
+</mvc:View>
